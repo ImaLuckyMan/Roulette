@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Roulette Game Code", "Roulette Game Code.csproj", "{53B4462C-0AA4-4833-BEE8-FAD67C8B8F07}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D162A568-D597-4F94-B383-FB47E4D4F5B0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\RouletteWheel.wav = ..\..\RouletteWheel.wav
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Roulette_WPF", "..\Roulette_WPF\Roulette_WPF.csproj", "{5B81FBA4-A4F3-4E28-B8B4-B3BA6115A9B0}"
 	ProjectSection(ProjectDependencies) = postProject

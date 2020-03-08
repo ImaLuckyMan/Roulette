@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Media;
 
 namespace Roulette
 {
-    class Game
+    public class Game
     {
         static void Main()
         {
@@ -10,7 +11,7 @@ namespace Roulette
             Random ran = new Random();
             var r = new Random();
             string[] color = { "Red", "Black" };
-            string guess;
+            string choice;
             int attempts = 0;
             int bet;
             int money = 500;
@@ -22,11 +23,11 @@ namespace Roulette
                 Console.WriteLine("a.Even    b.Odd    c.1 to 18    d.19 to 36");
                 Console.WriteLine("e.Red     f.Black  g.1st 12     h.2nd 12");
                 Console.WriteLine("i.3rd 12");
-                guess = (Console.ReadLine());
+                choice = (Console.ReadLine());
 
                 //guess verifier
-                guess.ToLower();
-                bool check = guess == "a" || guess == "b" || guess == "c" || guess == "d" || guess == "e" || guess == "f" || guess == "g" || guess == "h" || guess == "i";
+                choice.ToLower();
+                bool check = choice == "a" || choice == "b" || choice == "c" || choice == "d" || choice == "e" || choice == "f" || choice == "g" || choice == "h" || choice == "i";
                 if (check == false)
                 {
                     Console.WriteLine("You did not enter the correct input value (even/odd), Please try again!");
@@ -53,7 +54,7 @@ namespace Roulette
                         int roll = ran.Next(0, 37);
                         string ranColor = color[r.Next(color.Length)];
                         bool even = roll % 2 == 0;
-                        if ((((guess == "a") && (even == true))) || (((guess == "b") && (even == false))) || ((guess == "e") && (ranColor == "Red") || (guess == "f") && (ranColor == "Black")))
+                        if ((((choice == "a") && (even == true))) || (((choice == "b") && (even == false))) || ((choice == "e") && (ranColor == "Red") || (choice == "f") && (ranColor == "Black")))
                         {
                             Console.WriteLine("The roulette rolled: " + ranColor + " " + roll);
                             Console.WriteLine("You won! +$" + bet * 2 + "!");
@@ -62,7 +63,7 @@ namespace Roulette
                             attempts += 1;
                             Console.ReadKey();
                         }
-                        else if ((guess == "c") && ((roll > 0) && (roll < 19)))
+                        else if ((choice == "c") && ((roll > 0) && (roll < 19)))
                         {
                             Console.WriteLine("The roulette rolled: " + ranColor + " " + roll);
                             Console.WriteLine("You won! +$" + bet * 2 + "!");
@@ -71,7 +72,7 @@ namespace Roulette
                             attempts += 1;
                             Console.ReadKey();
                         }
-                        else if ((guess == "d") && ((roll > 18) && (roll < 37)))
+                        else if ((choice == "d") && ((roll > 18) && (roll < 37)))
                         {
                             Console.WriteLine("The roulette rolled: " + ranColor + " " + roll);
                             Console.WriteLine("You won! +$" + bet * 2 + "!");
@@ -80,7 +81,7 @@ namespace Roulette
                             attempts += 1;
                             Console.ReadKey();
                         }
-                        else if ((guess == "g") && (roll > 0 && roll < 13) || (guess == "h") && (roll > 12 && roll < 25) || (guess == "i") && (roll > 24 && roll < 37))
+                        else if ((choice == "g") && (roll > 0 && roll < 13) || (choice == "h") && (roll > 12 && roll < 25) || (choice == "i") && (roll > 24 && roll < 37))
                         {
                             Console.WriteLine("The roulette rolled: " + ranColor + " " + roll);
                             Console.WriteLine("You won! +$" + bet * 2 + "!");
